@@ -21,14 +21,12 @@ namespace Chicken
 			string result =string.Empty;
 			for(int cock = 1; cock <=20; cock++)
 			{
-				for(int hen = 1; hen <= 34; hen++)
+				for(int hen = 1; hen <= 33; hen++)
 				{
-					for (int chick = 1; chick <= 34; chick++)
+					for (int chick = 1; chick <= 33; chick++)
 					{
 						if (cock + hen + (chick * 3) == 100 && (5 * cock) + (3 * hen) + chick == 100)
-						{
 							result += $"{cock}隻公雞,{hen}隻母雞,{chick * 3}隻小雞\n";
-						}
 					}
 				}
 			}
