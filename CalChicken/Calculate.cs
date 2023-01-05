@@ -20,17 +20,24 @@ namespace CalChicken
 			string result = string.Empty;
 			int totalPrice = 100; //總金額
 			int Num = 100; //總數量
+
 			int cockPrice = 5; //公雞金額
 			int henPrice = 3; //母雞金額
 			int chickPrice = 1; //小雞金額
+
+			int cock; //公雞數量
+			int hen; //母雞數量
 			int chick; //小雞數量
 			int chickgroup = 3; //小雞一組3隻
 
-			for (int cock = 0; cock <= Num/cockPrice; cock++)//公雞一隻五元 最多20組
+			int cockMax = Num / cockPrice; //最多幾隻公雞
+			
+			for (cock = 0; cock<=cockMax; cock++)//公雞一隻五元 最多20組
 			{
-				for (int hen = 0; (cockPrice * cock)+(henPrice * hen) <= totalPrice; hen++)//母雞一隻三元 最多33組
+				int henMax = (totalPrice- (cockPrice * cock))/henPrice;//最多幾隻母雞
+				for (hen = 0; hen<=henMax ; hen++)//母雞一隻三元 最多33組
 				{
-					chick = Num - cock - hen;
+					chick = Num - cock - hen; //小雞數量
 					if (chick % chickgroup == 0 &&(cockPrice * cock) + (henPrice * hen) + (chickPrice * chick / chickgroup) == totalPrice)
 						result += $"{cock}隻公雞,{hen}隻母雞,{chick}隻小雞\n";
 				}
