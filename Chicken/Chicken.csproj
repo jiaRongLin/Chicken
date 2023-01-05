@@ -49,5 +49,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CalChicken\CalChicken.csproj">
+      <Project>{fb80b1ca-3d78-48db-8a44-0497122e9140}</Project>
+      <Name>CalChicken</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
